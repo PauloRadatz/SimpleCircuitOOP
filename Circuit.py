@@ -31,9 +31,6 @@ class Circuit:
             self.buses[bus] = Bus(bus)
             self.buses_order.append(bus)
 
-    def set_bus_type(self, bus, bus_type):
-        self.buses[bus].set_bus_type(bus_type)
-
     def add_resistor_element(self, name, bus1, bus2, r):
 
         self.resistors[name] = Resistor(name, bus1, bus2, r)
