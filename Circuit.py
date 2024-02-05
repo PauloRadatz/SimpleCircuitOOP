@@ -48,7 +48,7 @@ class Circuit:
 
         self.g_elements[name] = self.loads[name]
 
-    def add_vsource_element(self, name, bus1, v):
+    def add_vsource_element(self, name: str, bus1: str, v: float):
 
         self.vsource = VSource(name, bus1, v)
         self.__add_bus(bus1)

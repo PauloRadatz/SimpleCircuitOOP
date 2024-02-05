@@ -1,0 +1,67 @@
+@startuml
+
+Circuit "1" *-- "many" Resistor : contains
+Circuit "1" *-- "many" Load : contains
+Circuit "1" *-- "many" VSource : contains
+Circuit "1" *-- "many" Bus : contains
+Solution "1" o-- "1" Circuit : contains
+
+
+class Circuit {
+    +name : string
+    +bus_order : list[string]
+    +buses : dict[string, Bus]
+    +g_elements : dict
+    +resistors : list[Resistor]
+    +loads : dict[string, Loads]
+    +buses : dict[string, Bus]
+    +vsource : VSource
+    -add_bus(bus)
+    +add_resistor_element(name: string, bus1: string, bus2: string, r: float)
+    +add_load_element(name, bus1, p, v)
+    +add_vsource_element(name: string, bus1: string, v: float)
+}
+
+class Bus {
+    +counter : integer
+    +index : integer
+    +name : string
+    +v : float
+    +set_bus_v(bus_v: float)
+}
+
+class Load {
+    +name : string
+    +bus1 :string
+    +p : float
+    +v : float
+    +r : float
+    +buses : list[string]
+    +g : float
+    +calc_g()
+}
+
+class Resistor {
+    +name : string
+    +bus1 :string
+    +bus2 :string
+    +r : float
+    +buses : list[string, string]
+    +g : float
+    +calc_g()
+}
+
+class VSource {
+    +name : string
+    +bus1 :string
+    +v : float
+    +buses : list[string]
+}
+
+class Solution {
+    circuit : Circuit
+    build_g_matrix()
+    do_power_flow()
+}
+
+@enduml

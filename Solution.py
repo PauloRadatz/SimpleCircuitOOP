@@ -8,6 +8,7 @@
 from Circuit import Circuit
 import numpy as np
 
+
 class Solution:
 
     def __init__(self, circuit: Circuit):
