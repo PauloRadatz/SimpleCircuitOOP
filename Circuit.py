@@ -56,4 +56,4 @@ class Circuit:
 
     def print_nodal_voltage(self):
         for bus in self.buses_order:
-            print(f"Bus = {bus} : voltage = {self.buses[bus].v}")
+            print(f"Bus = {bus} : voltage = {self.buses[bus].v} V")
