@@ -33,12 +33,12 @@ class Circuit:
 
     def add_resistor_element(self, name, bus1, bus2, r):
 
-        self.resistors[name] = Resistor(name, bus1, bus2, r)
+`        self.resistors[name] = Resistor(name, bus1, bus2, r)
         self.resistors[name].calc_g()
         self.__add_bus(bus1)
         self.__add_bus(bus2)
 
-        self.g_elements[name] = self.resistors[name]
+        self.g_elements[name] = self.resistors[name]`
 
     def add_load_element(self, name, bus1, p, v):
 
